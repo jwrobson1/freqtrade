@@ -91,7 +91,7 @@ class JumschBBpBAO(IStrategy):
     sell_BBpB_high = IntParameter(99,101,default=100,space="sell")
 
     # buy_AO_low = IntParameter(-200,0,default=-100,space="buy")
-    sell_AO_high = IntParameter(-10,10,default=-5,space="sell")
+    sell_AO_high = IntParameter(-10,10,default=5,space="sell")
    
 
     # Optional order type mapping.
@@ -241,8 +241,16 @@ class JumschBBpBAO(IStrategy):
         dataframe['ao_sma300'] = ta.SMA(dataframe['ao'], timeperiod=300)
         dataframe['ao_sma500'] = ta.SMA(dataframe['ao'], timeperiod=500)
 
-        dataframe['ao_sma50_adj'] = dataframe['ao_sma50']+(dataframe['ao_sma500']*self.sell_AO_high.value)
-                # data[ao] > self ao high / sma?
+
+        dataframe['ao_ema10'] = ta.EMA(dataframe['ao'], timeperiod=10)
+        dataframe['ao_ema50'] = ta.EMA(dataframe['ao'], timeperiod=50)
+        dataframe['ao_ema100'] = ta.EMA(dataframe['ao'], timeperiod=100)
+        dataframe['ao_ema200'] = ta.EMA(dataframe['ao'], timeperiod=200)
+        dataframe['ao_ema300'] = ta.EMA(dataframe['ao'], timeperiod=300)
+        dataframe['ao_ema500'] = ta.EMA(dataframe['ao'], timeperiod=500)
+
+        dataframe['ao_sma50_adj'] = dataframe['ao_ema50']+(abs(dataframe['ao_sma500'])*self.sell_AO_high.value)
+                                        ### ao_ema50?
 
         return dataframe
 
