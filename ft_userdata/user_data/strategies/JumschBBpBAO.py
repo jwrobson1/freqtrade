@@ -91,7 +91,7 @@ class JumschBBpBAO(IStrategy):
     sell_BBpB_high = IntParameter(99,101,default=100,space="sell")
 
     # buy_AO_low = IntParameter(-200,0,default=-100,space="buy")
-    sell_AO_high = IntParameter(-10,10,default=0,space="sell")
+    sell_AO_high = IntParameter(-10,10,default=-5,space="sell")
    
 
     # Optional order type mapping.
@@ -241,7 +241,7 @@ class JumschBBpBAO(IStrategy):
         dataframe['ao_sma300'] = ta.SMA(dataframe['ao'], timeperiod=300)
         dataframe['ao_sma500'] = ta.SMA(dataframe['ao'], timeperiod=500)
 
-        dataframe['ao_sma500_adj'] = dataframe['ao_sma500']+(dataframe['ao_sma500']*self.sell_AO_high.value)
+        dataframe['ao_sma50_adj'] = dataframe['ao_sma50']+(dataframe['ao_sma500']*self.sell_AO_high.value)
                 # data[ao] > self ao high / sma?
 
         return dataframe
@@ -270,7 +270,7 @@ class JumschBBpBAO(IStrategy):
         dataframe.loc[
             (
                 (qtpylib.crossed_below(dataframe['bb_percent'], float(self.sell_BBpB_high.value)/100)) &
-                (dataframe['ao']>(dataframe['ao_sma500']+(dataframe['ao_sma500']*self.sell_AO_high.value)))&
+                (dataframe['ao']>(dataframe['ao_sma50_adj']))&
                 (dataframe['volume'] > 0)  # Make sure Volume is not 0
             ),
             'exit_long'] = 1
