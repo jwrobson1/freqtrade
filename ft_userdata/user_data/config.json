@@ -6,7 +6,7 @@
     "tradable_balance_ratio": 0.99,
     "fiat_display_currency": "USD",
     "dry_run": true,
-    "dry_run_wallet": 1000,
+    "dry_run_wallet": 100,
     "cancel_open_orders_on_exit": false,
     "trading_mode": "spot",
     "margin_mode": "",
@@ -42,20 +42,31 @@
             "rateLimit": 3100
         },
         "pair_whitelist": [
+            "ADA/USDT", 
+            "ATOM/USDT",
+            "AVAX/USDT",
+            "BCH/USDT",
+            "DAI/USDT",
+            "EOS/USDT",
+            "EURT/USDT",
             "BTC/USDT",
             "ETH/USDT",
             "DOGE/USDT",
-            "ATOM/USDT",
-            "ALGO/USDT",
-            "BCH/USDT",
-            "EOS/USDT",
             "LINK/USDT",
-            "LTC/USDT",
             "XMR/USDT",
-            "XRP/USDT",
-            "XTZ/USDT"
+            "XRP/USDT"
+
         ],
         "pair_blacklist": [
+            "SHIB/USDT",
+            "XTZ/USDT",
+            "MANA/USDT",
+            "LTC/USDT",
+            "SOL/USDT",
+            "APE/USDT",
+            "ALGO/USDT",
+            "DOT/USDT",
+            "MATIC/USDT"
 
         ]
     },
