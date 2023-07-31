@@ -18,22 +18,6 @@ import freqtrade.vendor.qtpylib.indicators as qtpylib
 
 # This class is a sample. Feel free to customize it.
 class SampleStrategy(IStrategy):
-    """
-    This is a sample strategy to inspire you.
-    More information in https://www.freqtrade.io/en/latest/strategy-customization/
-
-    You can:
-        :return: a Dataframe with all mandatory indicators for the strategies
-    - Rename the class name (Do not forget to update class_name)
-    - Add any methods you want to build your strategy
-    - Add any lib you need to build your strategy
-
-    You must keep:
-    - the lib in the section "Do not remove these libs"
-    - the methods: populate_indicators, populate_entry_trend, populate_exit_trend
-    You should keep:
-    - timeframe, minimal_roi, stoploss, trailing_*
-    """
     # Strategy interface version - allow new iterations of the strategy interface.
     # Check the documentation or the Sample strategy to get the latest version.
     INTERFACE_VERSION = 3

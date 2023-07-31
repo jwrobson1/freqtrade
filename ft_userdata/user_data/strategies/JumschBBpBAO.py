@@ -88,11 +88,11 @@ class JumschBBpBAO(IStrategy):
 
     buy_BBpB_low = IntParameter(-150,50,default=0,space="buy")
     # sell_BBpB_high = IntParameter(50,150,default=100,space="sell")
-    sell_BBpB_high = IntParameter(99,101,default=100,space="sell")
+    sell_BBpB_high = IntParameter(99,101,default=103,space="sell")
 
     # buy_AO_low = IntParameter(-200,0,default=-100,space="buy")
-    sell_AO_high = IntParameter(-10,10,default=5,space="sell")
-   
+    sell_AO_high = IntParameter(-10,10,default=0,space="sell")
+
 
     # Optional order type mapping.
     order_types = {
@@ -107,7 +107,7 @@ class JumschBBpBAO(IStrategy):
         'entry': 'GTC',
         'exit': 'GTC'
     }
-    
+
     @property
     def plot_config(self):
         return {
@@ -141,7 +141,7 @@ class JumschBBpBAO(IStrategy):
         """
         return []
 
-    def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:        
+    def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         # Momentum Indicators
         # ------------------------------------
         # Awesome Oscillator
@@ -252,6 +252,7 @@ class JumschBBpBAO(IStrategy):
         dataframe['ao_sma50_adj'] = dataframe['ao_ema50']+(abs(dataframe['ao_sma500'])*self.sell_AO_high.value)
                                         ### ao_ema50?
 
+
         return dataframe
 
     def populate_entry_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
@@ -263,7 +264,7 @@ class JumschBBpBAO(IStrategy):
             ),
             'enter_long'] = 1
         # Uncomment to use shorts (Only used in futures/margin mode. Check the documentation for more info)
-    
+
         # dataframe.loc[
         #     (
         #         (qtpylib.crossed_below(dataframe['aroonosc'], self.aroon_osc_high.value)) &  # Signal: RSI crosses above buy_rsi
@@ -292,7 +293,7 @@ class JumschBBpBAO(IStrategy):
         #     'exit_short'] = 1
 
         return dataframe
-    
+
     def bot_loop_start(self, current_time: datetime, **kwargs) -> None:
         """
         Called at the start of the bot iteration (one loop).
