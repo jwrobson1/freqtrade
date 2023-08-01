@@ -250,7 +250,7 @@ class JumschBBpBAO(IStrategy):
         dataframe['ao_ema500'] = ta.EMA(dataframe['ao'], timeperiod=500)
 
         dataframe['ao_ema10_adj_down'] = -dataframe['ao_ema10']-(abs(dataframe['ao_ema10'])*self.sell_AO_high.value/100)
-        dataframe['ao_ema10_adj_up'] = -dataframe['ao_ema10']+(abs(dataframe['ao_ema10'])*self.sell_AO_high.value/100)
+        dataframe['ao_ema10_adj_up'] = dataframe['ao_ema10']+(abs(dataframe['ao_ema10'])*self.sell_AO_high.value/100)
         
         return dataframe
 
