@@ -55,7 +55,7 @@ class JumschBBpBAO(IStrategy):
 
     # Optimal stoploss designed for the strategy.
     # This attribute will be overridden if the config file contains "stoploss".
-    stoploss = -0.10
+    stoploss = -0.05
 
     # Trailing stoploss
     trailing_stop = False
@@ -91,7 +91,7 @@ class JumschBBpBAO(IStrategy):
     sell_BBpB_high = IntParameter(99,101,default=103,space="sell")
 
     # buy_AO_low = IntParameter(-200,0,default=-100,space="buy")
-    sell_AO_high = IntParameter(-10,10,default=0,space="sell")
+    sell_AO_high = IntParameter(0,1000,default=10,space="sell")
 
 
     # Optional order type mapping.
@@ -249,16 +249,16 @@ class JumschBBpBAO(IStrategy):
         dataframe['ao_ema300'] = ta.EMA(dataframe['ao'], timeperiod=300)
         dataframe['ao_ema500'] = ta.EMA(dataframe['ao'], timeperiod=500)
 
-        dataframe['ao_ema10_adj'] = -dataframe['ao_ema10']+(abs(dataframe['ao_ema10'])*self.sell_AO_high.value)
-        dataframe['ao_ema10_ema10_adj'] = -dataframe['ao_ema10'].mul(0.5)+(abs(dataframe['ao_ema10'])*self.sell_AO_high.value)
-
+        dataframe['ao_ema10_adj_down'] = -dataframe['ao_ema10']-(abs(dataframe['ao_ema10'])*self.sell_AO_high.value/100)
+        dataframe['ao_ema10_adj_up'] = -dataframe['ao_ema10']+(abs(dataframe['ao_ema10'])*self.sell_AO_high.value/100)
+        
         return dataframe
 
     def populate_entry_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         dataframe.loc[
             (
                 (qtpylib.crossed_above(dataframe['bb_percent'], float(self.buy_BBpB_low.value)/100)) &
-                (dataframe['ao']<dataframe['ao_ema10_adj'])&
+                (dataframe['ao']<dataframe['ao_ema10_adj_down'])&
                 (dataframe['volume'] > 0)  # Make sure Volume is not 0
             ),
             'enter_long'] = 1
@@ -278,7 +278,7 @@ class JumschBBpBAO(IStrategy):
         dataframe.loc[
             (
                 (qtpylib.crossed_below(dataframe['bb_percent'], float(self.sell_BBpB_high.value)/100)) &
-                (dataframe['ao']>(dataframe['ao_ema10_adj']))&
+                (dataframe['ao']>(dataframe['ao_ema10_adj_up']))&
                 (dataframe['volume'] > 0)  # Make sure Volume is not 0
             ),
             'exit_long'] = 1
