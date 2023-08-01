@@ -249,7 +249,7 @@ class JumschBBpBAO(IStrategy):
         dataframe['ao_ema300'] = ta.EMA(dataframe['ao'], timeperiod=300)
         dataframe['ao_ema500'] = ta.EMA(dataframe['ao'], timeperiod=500)
 
-        dataframe['ao_sma50_adj'] = dataframe['ao_ema50']+(abs(dataframe['ao_sma500'])*self.sell_AO_high.value)
+        dataframe['ao_ema10_adj'] = -dataframe['ao_ema10']+(abs(dataframe['ao_ema10'])*self.sell_AO_high.value)
                                         ### ao_ema50?
 
 
@@ -259,7 +259,7 @@ class JumschBBpBAO(IStrategy):
         dataframe.loc[
             (
                 (qtpylib.crossed_above(dataframe['bb_percent'], float(self.buy_BBpB_low.value)/100)) &
-                # (dataframe['ao']<self.buy_AO_low.value)&
+                (dataframe['ao']<dataframe['ao_ema10_adj'])&
                 (dataframe['volume'] > 0)  # Make sure Volume is not 0
             ),
             'enter_long'] = 1
@@ -279,7 +279,7 @@ class JumschBBpBAO(IStrategy):
         dataframe.loc[
             (
                 (qtpylib.crossed_below(dataframe['bb_percent'], float(self.sell_BBpB_high.value)/100)) &
-                (dataframe['ao']>(dataframe['ao_sma50_adj']))&
+                (dataframe['ao']>(dataframe['ao_ema10_adj']))&
                 (dataframe['volume'] > 0)  # Make sure Volume is not 0
             ),
             'exit_long'] = 1
