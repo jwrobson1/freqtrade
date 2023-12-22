@@ -42,32 +42,10 @@
             "rateLimit": 3100
         },
         "pair_whitelist": [
-            "ADA/USDT", 
-            "ATOM/USDT",
-            "AVAX/USDT",
-            "BCH/USDT",
-            "DAI/USDT",
-            "EOS/USDT",
-            "EURT/USDT",
             "BTC/USDT",
-            "ETH/USDT",
-            "DOGE/USDT",
-            "LINK/USDT",
-            "XMR/USDT",
-            "XRP/USDT"
-
+            "ETH/USDT"
         ],
         "pair_blacklist": [
-            "SHIB/USDT",
-            "XTZ/USDT",
-            "MANA/USDT",
-            "LTC/USDT",
-            "SOL/USDT",
-            "APE/USDT",
-            "ALGO/USDT",
-            "DOT/USDT",
-            "MATIC/USDT"
-
         ]
     },
     "pairlists": [
@@ -107,9 +85,8 @@
         "feature_parameters" : {
             "include_timeframes": ["5m","15m","4h"],
             "include_corr_pairlist": [
-                "ETH/USD",
-                "LINK/USD",
-                "BNB/USD"
+                "BTC/USDT",
+                "ETH/USDT"
             ],
             "label_period_candles": 24,
             "include_shifted_candles": 2,
