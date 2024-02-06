@@ -5294,3 +5294,842 @@ Traceback (most recent call last):
   File "/freqtrade/freqtrade/freqai/data_kitchen.py", line 14, in <module>
     from datasieve.pipeline import Pipeline
 ModuleNotFoundError: No module named 'datasieve'
+2024-01-17 12:57:14,572 - freqtrade.loggers - INFO - Verbosity set to 0
+2024-01-17 12:57:14,572 - freqtrade.configuration.configuration - INFO - Runmode set to dry_run.
+2024-01-17 12:57:14,572 - freqtrade.configuration.configuration - INFO - Parameter --db-url detected ...
+2024-01-17 12:57:14,572 - freqtrade.configuration.configuration - INFO - Dry run is enabled
+2024-01-17 12:57:14,572 - freqtrade.configuration.configuration - INFO - Using DB: "sqlite:////freqtrade/user_data/tradesv3.sqlite"
+2024-01-17 12:57:14,573 - freqtrade.configuration.configuration - INFO - Using max_open_trades: 10 ...
+2024-01-17 12:57:14,577 - freqtrade.configuration.configuration - INFO - Using user-data directory: /freqtrade/user_data ...
+2024-01-17 12:57:14,577 - freqtrade.configuration.configuration - INFO - Using data directory: /freqtrade/user_data/data/kraken ...
+2024-01-17 12:57:14,578 - freqtrade.exchange.check_exchange - INFO - Checking exchange...
+2024-01-17 12:57:14,581 - freqtrade.exchange.check_exchange - INFO - Exchange "kraken" is officially supported by the Freqtrade development team.
+2024-01-17 12:57:14,581 - freqtrade.configuration.configuration - INFO - Using pairlist from configuration.
+2024-01-17 12:57:14,719 - freqtrade.resolvers.iresolver - INFO - Using resolved strategy freqai_strat from '/freqtrade/user_data/strategies/freqai_strat.py'...
+2024-01-17 12:57:14,720 - freqtrade.strategy.hyper - INFO - Found no parameter file.
+2024-01-17 12:57:14,720 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_currency' with value in config file: USDT.
+2024-01-17 12:57:14,720 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_amount' with value in config file: unlimited.
+2024-01-17 12:57:14,720 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'unfilledtimeout' with value in config file: {'entry': 10, 'exit': 10, 'exit_timeout_count': 0, 'unit': 'minutes'}.
+2024-01-17 12:57:14,720 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'max_open_trades' with value in config file: 10.
+2024-01-17 12:57:14,720 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using minimal_roi: {'60': 0.01, '30': 0.02, '0': 0.04}
+2024-01-17 12:57:14,721 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using timeframe: 5m
+2024-01-17 12:57:14,721 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stoploss: -0.1
+2024-01-17 12:57:14,721 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop: False
+2024-01-17 12:57:14,721 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop_positive_offset: 0.0
+2024-01-17 12:57:14,721 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_only_offset_is_reached: False
+2024-01-17 12:57:14,721 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_custom_stoploss: True
+2024-01-17 12:57:14,721 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using process_only_new_candles: True
+2024-01-17 12:57:14,721 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_types: {'entry': 'limit', 'exit': 'limit', 'stoploss': 'market', 'stoploss_on_exchange': False}
+2024-01-17 12:57:14,721 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_time_in_force: {'entry': 'GTC', 'exit': 'GTC'}
+2024-01-17 12:57:14,721 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_currency: USDT
+2024-01-17 12:57:14,721 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_amount: unlimited
+2024-01-17 12:57:14,721 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using protections: []
+2024-01-17 12:57:14,721 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using startup_candle_count: 20
+2024-01-17 12:57:14,722 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using unfilledtimeout: {'entry': 10, 'exit': 10, 'exit_timeout_count': 0, 'unit': 'minutes'}
+2024-01-17 12:57:14,722 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_exit_signal: True
+2024-01-17 12:57:14,722 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_only: False
+2024-01-17 12:57:14,722 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_roi_if_entry_signal: False
+2024-01-17 12:57:14,722 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_offset: 0.0
+2024-01-17 12:57:14,722 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using disable_dataframe_checks: False
+2024-01-17 12:57:14,722 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_buying_expired_candle_after: 0
+2024-01-17 12:57:14,722 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using position_adjustment_enable: False
+2024-01-17 12:57:14,722 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_entry_position_adjustment: -1
+2024-01-17 12:57:14,722 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_open_trades: 10
+2024-01-17 12:57:14,722 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
+2024-01-17 12:57:14,725 - freqtrade.exchange.exchange - INFO - Instance is running with dry_run enabled
+2024-01-17 12:57:14,725 - freqtrade.exchange.exchange - INFO - Using CCXT 4.2.2
+2024-01-17 12:57:14,725 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'enableRateLimit': True}
+2024-01-17 12:57:14,728 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'enableRateLimit': True, 'rateLimit': 3100}
+2024-01-17 12:57:14,730 - freqtrade.exchange.exchange - INFO - Using Exchange "Kraken"
+2024-01-17 12:57:19,728 - freqtrade.resolvers.exchange_resolver - INFO - Using resolved exchange 'Kraken'...
+2024-01-17 12:57:19,764 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 12:57:19,767 - freqtrade.resolvers.iresolver - INFO - Using resolved pairlist StaticPairList from '/freqtrade/freqtrade/plugins/pairlist/StaticPairList.py'...
+2024-01-17 12:57:20,010 - freqtrade.rpc.rpc_manager - INFO - Enabling rpc.api_server
+2024-01-17 12:57:20,264 - freqtrade.rpc.api_server.webserver - INFO - Starting HTTP Server at 0.0.0.0:8080
+2024-01-17 12:57:20,265 - freqtrade.rpc.api_server.webserver - INFO - Starting Local Rest Server.
+2024-01-17 12:57:20,284 - uvicorn.error - INFO - Started server process [1]
+2024-01-17 12:57:20,284 - uvicorn.error - INFO - Waiting for application startup.
+2024-01-17 12:57:20,285 - uvicorn.error - INFO - Application startup complete.
+2024-01-17 12:57:20,285 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+2024-01-17 12:57:20,288 - freqtrade.resolvers.iresolver - INFO - Using resolved pairlist StaticPairList from '/freqtrade/freqtrade/plugins/pairlist/StaticPairList.py'...
+2024-01-17 12:57:20,292 - freqtrade.plugins.pairlistmanager - INFO - Whitelist with 2 pairs: ['BTC/USDT', 'ETH/USDT']
+2024-01-17 12:57:20,348 - freqtrade.commands.trade_commands - ERROR - No freqaimodel set. Please use `--freqaimodel` to specify the FreqaiModel class to use.
+
+2024-01-17 12:57:20,348 - freqtrade.commands.trade_commands - ERROR - Fatal exception!
+Traceback (most recent call last):
+  File "/freqtrade/freqtrade/commands/trade_commands.py", line 24, in start_trading
+    worker = Worker(args)
+             ^^^^^^^^^^^^
+  File "/freqtrade/freqtrade/worker.py", line 37, in __init__
+    self._init(False)
+  File "/freqtrade/freqtrade/worker.py", line 53, in _init
+    self.freqtrade = FreqtradeBot(self._config)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/freqtrade/freqtrade/freqtradebot.py", line 140, in __init__
+    self.strategy.ft_bot_start()
+  File "/freqtrade/freqtrade/strategy/interface.py", line 187, in ft_bot_start
+    self.load_freqAI_model()
+  File "/freqtrade/freqtrade/strategy/interface.py", line 158, in load_freqAI_model
+    self.freqai = FreqaiModelResolver.load_freqaimodel(self.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/freqtrade/freqtrade/resolvers/freqaimodel_resolver.py", line 41, in load_freqaimodel
+    raise OperationalException(
+freqtrade.exceptions.OperationalException: No freqaimodel set. Please use `--freqaimodel` to specify the FreqaiModel class to use.
+
+2024-01-17 13:02:33,441 - freqtrade.loggers - INFO - Verbosity set to 0
+2024-01-17 13:02:33,441 - freqtrade.configuration.configuration - INFO - Runmode set to dry_run.
+2024-01-17 13:02:33,441 - freqtrade.configuration.configuration - INFO - Parameter --db-url detected ...
+2024-01-17 13:02:33,441 - freqtrade.configuration.configuration - INFO - Dry run is enabled
+2024-01-17 13:02:33,441 - freqtrade.configuration.configuration - INFO - Using DB: "sqlite:////freqtrade/user_data/tradesv3.sqlite"
+2024-01-17 13:02:33,441 - freqtrade.configuration.configuration - INFO - Using max_open_trades: 10 ...
+2024-01-17 13:02:33,446 - freqtrade.configuration.configuration - INFO - Using user-data directory: /freqtrade/user_data ...
+2024-01-17 13:02:33,446 - freqtrade.configuration.configuration - INFO - Using data directory: /freqtrade/user_data/data/kraken ...
+2024-01-17 13:02:33,447 - freqtrade.exchange.check_exchange - INFO - Checking exchange...
+2024-01-17 13:02:33,449 - freqtrade.exchange.check_exchange - INFO - Exchange "kraken" is officially supported by the Freqtrade development team.
+2024-01-17 13:02:33,449 - freqtrade.configuration.configuration - INFO - Using pairlist from configuration.
+2024-01-17 13:02:33,533 - freqtrade.resolvers.iresolver - INFO - Using resolved strategy freqai_strat from '/freqtrade/user_data/strategies/freqai_strat.py'...
+2024-01-17 13:02:33,533 - freqtrade.strategy.hyper - INFO - Found no parameter file.
+2024-01-17 13:02:33,534 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_currency' with value in config file: USDT.
+2024-01-17 13:02:33,534 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_amount' with value in config file: unlimited.
+2024-01-17 13:02:33,534 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'unfilledtimeout' with value in config file: {'entry': 10, 'exit': 10, 'exit_timeout_count': 0, 'unit': 'minutes'}.
+2024-01-17 13:02:33,534 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'max_open_trades' with value in config file: 10.
+2024-01-17 13:02:33,534 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using minimal_roi: {'60': 0.01, '30': 0.02, '0': 0.04}
+2024-01-17 13:02:33,534 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using timeframe: 5m
+2024-01-17 13:02:33,534 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stoploss: -0.1
+2024-01-17 13:02:33,534 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop: False
+2024-01-17 13:02:33,535 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop_positive_offset: 0.0
+2024-01-17 13:02:33,535 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_only_offset_is_reached: False
+2024-01-17 13:02:33,535 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_custom_stoploss: True
+2024-01-17 13:02:33,535 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using process_only_new_candles: True
+2024-01-17 13:02:33,535 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_types: {'entry': 'limit', 'exit': 'limit', 'stoploss': 'market', 'stoploss_on_exchange': False}
+2024-01-17 13:02:33,535 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_time_in_force: {'entry': 'GTC', 'exit': 'GTC'}
+2024-01-17 13:02:33,535 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_currency: USDT
+2024-01-17 13:02:33,536 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_amount: unlimited
+2024-01-17 13:02:33,536 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using protections: []
+2024-01-17 13:02:33,536 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using startup_candle_count: 20
+2024-01-17 13:02:33,536 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using unfilledtimeout: {'entry': 10, 'exit': 10, 'exit_timeout_count': 0, 'unit': 'minutes'}
+2024-01-17 13:02:33,536 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_exit_signal: True
+2024-01-17 13:02:33,536 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_only: False
+2024-01-17 13:02:33,536 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_roi_if_entry_signal: False
+2024-01-17 13:02:33,536 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_offset: 0.0
+2024-01-17 13:02:33,536 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using disable_dataframe_checks: False
+2024-01-17 13:02:33,536 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_buying_expired_candle_after: 0
+2024-01-17 13:02:33,537 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using position_adjustment_enable: False
+2024-01-17 13:02:33,537 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_entry_position_adjustment: -1
+2024-01-17 13:02:33,537 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_open_trades: 10
+2024-01-17 13:02:33,537 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
+2024-01-17 13:02:33,539 - freqtrade.exchange.exchange - INFO - Instance is running with dry_run enabled
+2024-01-17 13:02:33,540 - freqtrade.exchange.exchange - INFO - Using CCXT 4.2.2
+2024-01-17 13:02:33,540 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'enableRateLimit': True}
+2024-01-17 13:02:33,542 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'enableRateLimit': True, 'rateLimit': 3100}
+2024-01-17 13:02:33,545 - freqtrade.exchange.exchange - INFO - Using Exchange "Kraken"
+2024-01-17 13:02:38,366 - freqtrade.resolvers.exchange_resolver - INFO - Using resolved exchange 'Kraken'...
+2024-01-17 13:02:38,394 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 13:02:38,396 - freqtrade.resolvers.iresolver - INFO - Using resolved pairlist StaticPairList from '/freqtrade/freqtrade/plugins/pairlist/StaticPairList.py'...
+2024-01-17 13:02:38,641 - freqtrade.rpc.rpc_manager - INFO - Enabling rpc.api_server
+2024-01-17 13:02:38,891 - freqtrade.rpc.api_server.webserver - INFO - Starting HTTP Server at 0.0.0.0:8080
+2024-01-17 13:02:38,891 - freqtrade.rpc.api_server.webserver - INFO - Starting Local Rest Server.
+2024-01-17 13:02:38,903 - uvicorn.error - INFO - Started server process [1]
+2024-01-17 13:02:38,904 - uvicorn.error - INFO - Waiting for application startup.
+2024-01-17 13:02:38,904 - uvicorn.error - INFO - Application startup complete.
+2024-01-17 13:02:38,904 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+2024-01-17 13:02:38,907 - freqtrade.resolvers.iresolver - INFO - Using resolved pairlist StaticPairList from '/freqtrade/freqtrade/plugins/pairlist/StaticPairList.py'...
+2024-01-17 13:02:38,911 - freqtrade.plugins.pairlistmanager - INFO - Whitelist with 2 pairs: ['BTC/USDT', 'ETH/USDT']
+2024-01-17 13:02:38,951 - freqtrade.commands.trade_commands - ERROR - No freqaimodel set. Please use `--freqaimodel` to specify the FreqaiModel class to use.
+
+2024-01-17 13:02:38,951 - freqtrade.commands.trade_commands - ERROR - Fatal exception!
+Traceback (most recent call last):
+  File "/freqtrade/freqtrade/commands/trade_commands.py", line 24, in start_trading
+    worker = Worker(args)
+             ^^^^^^^^^^^^
+  File "/freqtrade/freqtrade/worker.py", line 37, in __init__
+    self._init(False)
+  File "/freqtrade/freqtrade/worker.py", line 53, in _init
+    self.freqtrade = FreqtradeBot(self._config)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/freqtrade/freqtrade/freqtradebot.py", line 140, in __init__
+    self.strategy.ft_bot_start()
+  File "/freqtrade/freqtrade/strategy/interface.py", line 187, in ft_bot_start
+    self.load_freqAI_model()
+  File "/freqtrade/freqtrade/strategy/interface.py", line 158, in load_freqAI_model
+    self.freqai = FreqaiModelResolver.load_freqaimodel(self.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/freqtrade/freqtrade/resolvers/freqaimodel_resolver.py", line 41, in load_freqaimodel
+    raise OperationalException(
+freqtrade.exceptions.OperationalException: No freqaimodel set. Please use `--freqaimodel` to specify the FreqaiModel class to use.
+
+2024-01-17 13:03:41,085 - freqtrade.loggers - INFO - Verbosity set to 0
+2024-01-17 13:03:41,086 - freqtrade.configuration.configuration - INFO - Runmode set to dry_run.
+2024-01-17 13:03:41,086 - freqtrade.configuration.configuration - INFO - Parameter --db-url detected ...
+2024-01-17 13:03:41,086 - freqtrade.configuration.configuration - INFO - Dry run is enabled
+2024-01-17 13:03:41,086 - freqtrade.configuration.configuration - INFO - Using DB: "sqlite:////freqtrade/user_data/tradesv3.sqlite"
+2024-01-17 13:03:41,086 - freqtrade.configuration.configuration - INFO - Using max_open_trades: 10 ...
+2024-01-17 13:03:41,091 - freqtrade.configuration.configuration - INFO - Using user-data directory: /freqtrade/user_data ...
+2024-01-17 13:03:41,091 - freqtrade.configuration.configuration - INFO - Using data directory: /freqtrade/user_data/data/kraken ...
+2024-01-17 13:03:41,091 - freqtrade.configuration.configuration - INFO - Using freqaimodel class name: XGBoostRegressor
+2024-01-17 13:03:41,091 - freqtrade.exchange.check_exchange - INFO - Checking exchange...
+2024-01-17 13:03:41,094 - freqtrade.exchange.check_exchange - INFO - Exchange "kraken" is officially supported by the Freqtrade development team.
+2024-01-17 13:03:41,094 - freqtrade.configuration.configuration - INFO - Using pairlist from configuration.
+2024-01-17 13:03:41,178 - freqtrade.resolvers.iresolver - INFO - Using resolved strategy freqai_strat from '/freqtrade/user_data/strategies/freqai_strat.py'...
+2024-01-17 13:03:41,178 - freqtrade.strategy.hyper - INFO - Found no parameter file.
+2024-01-17 13:03:41,178 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_currency' with value in config file: USDT.
+2024-01-17 13:03:41,178 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_amount' with value in config file: unlimited.
+2024-01-17 13:03:41,178 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'unfilledtimeout' with value in config file: {'entry': 10, 'exit': 10, 'exit_timeout_count': 0, 'unit': 'minutes'}.
+2024-01-17 13:03:41,178 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'max_open_trades' with value in config file: 10.
+2024-01-17 13:03:41,179 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using minimal_roi: {'60': 0.01, '30': 0.02, '0': 0.04}
+2024-01-17 13:03:41,179 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using timeframe: 5m
+2024-01-17 13:03:41,179 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stoploss: -0.1
+2024-01-17 13:03:41,179 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop: False
+2024-01-17 13:03:41,179 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop_positive_offset: 0.0
+2024-01-17 13:03:41,179 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_only_offset_is_reached: False
+2024-01-17 13:03:41,179 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_custom_stoploss: True
+2024-01-17 13:03:41,179 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using process_only_new_candles: True
+2024-01-17 13:03:41,179 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_types: {'entry': 'limit', 'exit': 'limit', 'stoploss': 'market', 'stoploss_on_exchange': False}
+2024-01-17 13:03:41,179 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_time_in_force: {'entry': 'GTC', 'exit': 'GTC'}
+2024-01-17 13:03:41,179 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_currency: USDT
+2024-01-17 13:03:41,180 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_amount: unlimited
+2024-01-17 13:03:41,180 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using protections: []
+2024-01-17 13:03:41,180 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using startup_candle_count: 20
+2024-01-17 13:03:41,180 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using unfilledtimeout: {'entry': 10, 'exit': 10, 'exit_timeout_count': 0, 'unit': 'minutes'}
+2024-01-17 13:03:41,180 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_exit_signal: True
+2024-01-17 13:03:41,180 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_only: False
+2024-01-17 13:03:41,180 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_roi_if_entry_signal: False
+2024-01-17 13:03:41,180 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_offset: 0.0
+2024-01-17 13:03:41,180 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using disable_dataframe_checks: False
+2024-01-17 13:03:41,180 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_buying_expired_candle_after: 0
+2024-01-17 13:03:41,180 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using position_adjustment_enable: False
+2024-01-17 13:03:41,181 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_entry_position_adjustment: -1
+2024-01-17 13:03:41,181 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_open_trades: 10
+2024-01-17 13:03:41,181 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
+2024-01-17 13:03:41,183 - freqtrade.exchange.exchange - INFO - Instance is running with dry_run enabled
+2024-01-17 13:03:41,184 - freqtrade.exchange.exchange - INFO - Using CCXT 4.2.2
+2024-01-17 13:03:41,184 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'enableRateLimit': True}
+2024-01-17 13:03:41,186 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'enableRateLimit': True, 'rateLimit': 3100}
+2024-01-17 13:03:41,189 - freqtrade.exchange.exchange - INFO - Using Exchange "Kraken"
+2024-01-17 13:03:46,090 - freqtrade.resolvers.exchange_resolver - INFO - Using resolved exchange 'Kraken'...
+2024-01-17 13:03:46,118 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 13:03:46,121 - freqtrade.resolvers.iresolver - INFO - Using resolved pairlist StaticPairList from '/freqtrade/freqtrade/plugins/pairlist/StaticPairList.py'...
+2024-01-17 13:03:46,337 - freqtrade.rpc.rpc_manager - INFO - Enabling rpc.api_server
+2024-01-17 13:03:46,588 - freqtrade.rpc.api_server.webserver - INFO - Starting HTTP Server at 0.0.0.0:8080
+2024-01-17 13:03:46,589 - freqtrade.rpc.api_server.webserver - INFO - Starting Local Rest Server.
+2024-01-17 13:03:46,602 - uvicorn.error - INFO - Started server process [1]
+2024-01-17 13:03:46,602 - uvicorn.error - INFO - Waiting for application startup.
+2024-01-17 13:03:46,602 - uvicorn.error - INFO - Application startup complete.
+2024-01-17 13:03:46,602 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+2024-01-17 13:03:46,606 - freqtrade.resolvers.iresolver - INFO - Using resolved pairlist StaticPairList from '/freqtrade/freqtrade/plugins/pairlist/StaticPairList.py'...
+2024-01-17 13:03:46,610 - freqtrade.plugins.pairlistmanager - INFO - Whitelist with 2 pairs: ['BTC/USDT', 'ETH/USDT']
+2024-01-17 13:03:48,803 - matplotlib.font_manager - INFO - generated new fontManager
+2024-01-17 13:03:49,225 - freqtrade.resolvers.iresolver - INFO - Using resolved freqaimodel XGBoostRegressor from '/freqtrade/freqtrade/freqai/prediction_models/XGBoostRegressor.py'...
+2024-01-17 13:03:49,225 - freqtrade.freqai.freqai_interface - INFO - Backtesting module configured to save all models.
+2024-01-17 13:03:49,225 - freqtrade.freqai.data_drawer - INFO - Could not find existing datadrawer, starting from scratch
+2024-01-17 13:03:49,225 - freqtrade.freqai.data_drawer - INFO - Could not find existing historic_predictions, starting from scratch
+2024-01-17 13:03:49,225 - freqtrade.freqai.freqai_interface - INFO - Set fresh train queue from whitelist. Queue: ['BTC/USDT', 'ETH/USDT']
+2024-01-17 13:03:49,226 - freqtrade.strategy.interface - INFO - Downloading all training data for all pairs in whitelist and corr_pairlist, this may take a while if the data is not already on disk.
+2024-01-17 13:03:49,227 - freqtrade.freqai.utils - INFO - FreqAI auto-downloader using 30 startup candles.
+2024-01-17 13:03:49,230 - freqtrade.data.history.history_utils - INFO - (1/2) - Download history data for "BTC/USDT", 5m, spot and store in /freqtrade/user_data/data/kraken. From 2023-12-13T13:03:49 to 2024-01-17T13:03:49
+2024-01-17 13:04:20,441 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 1
+2024-01-17 13:04:21,442 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 4 times.
+2024-01-17 13:04:26,621 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 1
+2024-01-17 13:04:27,622 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 4 times.
+2024-01-17 13:04:32,831 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 1
+2024-01-17 13:04:33,832 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 4 times.
+2024-01-17 13:04:39,017 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 2
+2024-01-17 13:04:41,019 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 3 times.
+2024-01-17 13:04:45,227 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 5
+2024-01-17 13:04:50,228 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 2 times.
+2024-01-17 13:04:53,549 - freqtrade.exchange.exchange - INFO - Downloaded data for BTC/USDT with length 10080.
+2024-01-17 13:04:53,591 - freqtrade.data.history.history_utils - INFO - (1/2) - Download history data for "BTC/USDT", 15m, spot and store in /freqtrade/user_data/data/kraken. From 2023-12-13T13:03:49 to 2024-01-17T13:03:49
+2024-01-17 13:04:59,829 - uvicorn.error - INFO - ('172.19.0.1', 47926) - "WebSocket /api/v1/message/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6eyJ1IjoiZnJlcXRyYWRlciJ9LCJleHAiOjE3MDU0OTc1OTksImlhdCI6MTcwNTQ5NjY5OSwidHlwZSI6ImFjY2VzcyJ9.GxP0_8ttvc93m_NVIjnYtbzyXupojh8HkBYPui06BaU" [accepted]
+2024-01-17 13:04:59,829 - freqtrade.rpc.api_server.ws.channel - INFO - Connected to channel - WebSocketChannel(32b7af74, ('172.19.0.1', 47926))
+2024-01-17 13:04:59,830 - uvicorn.error - INFO - connection open
+2024-01-17 13:05:00,030 - uvicorn.error - INFO - ('172.19.0.1', 47938) - "WebSocket /api/v1/message/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6eyJ1IjoiZnJlcXRyYWRlciJ9LCJleHAiOjE3MDU0OTc1OTksImlhdCI6MTcwNTQ5NjY5OSwidHlwZSI6ImFjY2VzcyJ9.GxP0_8ttvc93m_NVIjnYtbzyXupojh8HkBYPui06BaU" [accepted]
+2024-01-17 13:05:00,030 - freqtrade.rpc.api_server.ws.channel - INFO - Connected to channel - WebSocketChannel(720c2323, ('172.19.0.1', 47938))
+2024-01-17 13:05:00,030 - uvicorn.error - INFO - connection open
+2024-01-17 13:05:00,277 - uvicorn.error - INFO - ('172.19.0.1', 47944) - "WebSocket /api/v1/message/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6eyJ1IjoiZnJlcXRyYWRlciJ9LCJleHAiOjE3MDU0OTc1OTksImlhdCI6MTcwNTQ5NjY5OSwidHlwZSI6ImFjY2VzcyJ9.GxP0_8ttvc93m_NVIjnYtbzyXupojh8HkBYPui06BaU" [accepted]
+2024-01-17 13:05:00,277 - freqtrade.rpc.api_server.ws.channel - INFO - Connected to channel - WebSocketChannel(9b996ff5, ('172.19.0.1', 47944))
+2024-01-17 13:05:00,278 - uvicorn.error - INFO - connection open
+2024-01-17 13:05:09,372 - freqtrade.exchange.exchange - INFO - Downloaded data for BTC/USDT with length 3360.
+2024-01-17 13:05:09,388 - freqtrade.data.history.history_utils - INFO - (1/2) - Download history data for "BTC/USDT", 4h, spot and store in /freqtrade/user_data/data/kraken. From 2023-12-13T13:03:49 to 2024-01-17T13:03:49
+2024-01-17 13:05:12,751 - freqtrade.exchange.exchange - INFO - Downloaded data for BTC/USDT with length 210.
+2024-01-17 13:05:12,759 - freqtrade.data.history.history_utils - INFO - (2/2) - Download history data for "ETH/USDT", 5m, spot and store in /freqtrade/user_data/data/kraken. From 2023-12-13T13:03:49 to 2024-01-17T13:03:49
+2024-01-17 13:05:43,960 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 1
+2024-01-17 13:05:44,961 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 4 times.
+2024-01-17 13:05:50,663 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 1
+2024-01-17 13:05:51,664 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 4 times.
+2024-01-17 13:05:56,374 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 1
+2024-01-17 13:05:57,375 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 4 times.
+2024-01-17 13:06:02,558 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 2
+2024-01-17 13:06:04,559 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 3 times.
+2024-01-17 13:06:07,817 - uvicorn.error - INFO - connection closed
+2024-01-17 13:06:07,817 - freqtrade.rpc.api_server.ws.channel - INFO - Disconnected from channel - WebSocketChannel(720c2323, ('172.19.0.1', 47938))
+2024-01-17 13:06:07,818 - uvicorn.error - INFO - connection closed
+2024-01-17 13:06:07,818 - uvicorn.error - INFO - connection closed
+2024-01-17 13:06:07,819 - freqtrade.rpc.api_server.ws.channel - INFO - Disconnected from channel - WebSocketChannel(9b996ff5, ('172.19.0.1', 47944))
+2024-01-17 13:06:07,819 - freqtrade.rpc.api_server.ws.channel - INFO - Disconnected from channel - WebSocketChannel(32b7af74, ('172.19.0.1', 47926))
+2024-01-17 13:06:08,516 - uvicorn.error - INFO - ('172.19.0.1', 48036) - "WebSocket /api/v1/message/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6eyJ1IjoiZnJlcXRyYWRlciJ9LCJleHAiOjE3MDU0OTc1OTksImlhdCI6MTcwNTQ5NjY5OSwidHlwZSI6ImFjY2VzcyJ9.GxP0_8ttvc93m_NVIjnYtbzyXupojh8HkBYPui06BaU" [accepted]
+2024-01-17 13:06:08,516 - freqtrade.rpc.api_server.ws.channel - INFO - Connected to channel - WebSocketChannel(b0440bf2, ('172.19.0.1', 48036))
+2024-01-17 13:06:08,516 - uvicorn.error - INFO - connection open
+2024-01-17 13:06:08,752 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 5
+2024-01-17 13:06:08,793 - uvicorn.error - INFO - ('172.19.0.1', 48048) - "WebSocket /api/v1/message/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6eyJ1IjoiZnJlcXRyYWRlciJ9LCJleHAiOjE3MDU0OTc1OTksImlhdCI6MTcwNTQ5NjY5OSwidHlwZSI6ImFjY2VzcyJ9.GxP0_8ttvc93m_NVIjnYtbzyXupojh8HkBYPui06BaU" [accepted]
+2024-01-17 13:06:08,793 - freqtrade.rpc.api_server.ws.channel - INFO - Connected to channel - WebSocketChannel(7ad3faad, ('172.19.0.1', 48048))
+2024-01-17 13:06:08,794 - uvicorn.error - INFO - connection open
+2024-01-17 13:06:09,041 - uvicorn.error - INFO - ('172.19.0.1', 48054) - "WebSocket /api/v1/message/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6eyJ1IjoiZnJlcXRyYWRlciJ9LCJleHAiOjE3MDU0OTc1OTksImlhdCI6MTcwNTQ5NjY5OSwidHlwZSI6ImFjY2VzcyJ9.GxP0_8ttvc93m_NVIjnYtbzyXupojh8HkBYPui06BaU" [accepted]
+2024-01-17 13:06:09,041 - freqtrade.rpc.api_server.ws.channel - INFO - Connected to channel - WebSocketChannel(7b71caf5, ('172.19.0.1', 48054))
+2024-01-17 13:06:09,041 - uvicorn.error - INFO - connection open
+2024-01-17 13:06:13,755 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 2 times.
+2024-01-17 13:06:17,110 - freqtrade.exchange.exchange - INFO - Downloaded data for ETH/USDT with length 10080.
+2024-01-17 13:06:17,132 - freqtrade.data.history.history_utils - INFO - (2/2) - Download history data for "ETH/USDT", 15m, spot and store in /freqtrade/user_data/data/kraken. From 2023-12-13T13:03:49 to 2024-01-17T13:03:49
+2024-01-17 13:06:32,838 - freqtrade.exchange.exchange - INFO - Downloaded data for ETH/USDT with length 3360.
+2024-01-17 13:06:32,849 - freqtrade.data.history.history_utils - INFO - (2/2) - Download history data for "ETH/USDT", 4h, spot and store in /freqtrade/user_data/data/kraken. From 2023-12-13T13:03:49 to 2024-01-17T13:03:49
+2024-01-17 13:06:36,196 - freqtrade.exchange.exchange - INFO - Downloaded data for ETH/USDT with length 210.
+2024-01-17 13:06:36,203 - freqtrade.strategy.hyper - INFO - No params for buy found, using default values.
+2024-01-17 13:06:36,203 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): buy_rsi = 30
+2024-01-17 13:06:36,204 - freqtrade.strategy.hyper - INFO - No params for sell found, using default values.
+2024-01-17 13:06:36,204 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): sell_rsi = 70
+2024-01-17 13:06:36,204 - freqtrade.strategy.hyper - INFO - No params for protection found, using default values.
+2024-01-17 13:06:36,204 - freqtrade.plugins.protectionmanager - INFO - No protection Handlers defined.
+2024-01-17 13:06:36,204 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'running'}
+2024-01-17 13:06:36,204 - freqtrade.worker - INFO - Changing state to: RUNNING
+2024-01-17 13:06:36,222 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': warning, 'status': 'Dry run is enabled. All trades are simulated.'}
+2024-01-17 13:06:36,222 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "*Exchange:* `kraken`\n*Stake per trade:* `unlimited USDT`\n*Minimum ROI:* `{'60': 0.01, '30': 0.02, '0': 0.04}`\n*Stoploss:* `-0.1`\n*Position adjustment:* `Off`\n*Timeframe:* `5m`\n*Strategy:* `freqai_strat`"}
+2024-01-17 13:06:36,223 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "Searching for USDT pairs to buy and sell based on [{'StaticPairList': 'StaticPairList'}]"}
+2024-01-17 13:06:55,127 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 13:07:55,129 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 13:08:55,131 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 13:09:55,133 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 13:10:57,472 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 13:11:57,473 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 13:12:57,475 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 13:13:57,477 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 13:14:57,479 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 13:15:00,914 - uvicorn.error - INFO - connection closed
+2024-01-17 13:15:00,915 - freqtrade.rpc.api_server.ws.channel - INFO - Disconnected from channel - WebSocketChannel(b0440bf2, ('172.19.0.1', 48036))
+2024-01-17 13:15:00,915 - uvicorn.error - INFO - connection closed
+2024-01-17 13:15:00,916 - uvicorn.error - INFO - connection closed
+2024-01-17 13:15:00,916 - freqtrade.rpc.api_server.ws.channel - INFO - Disconnected from channel - WebSocketChannel(7ad3faad, ('172.19.0.1', 48048))
+2024-01-17 13:15:00,916 - freqtrade.rpc.api_server.ws.channel - INFO - Disconnected from channel - WebSocketChannel(7b71caf5, ('172.19.0.1', 48054))
+2024-01-17 13:15:01,654 - uvicorn.error - INFO - ('172.19.0.1', 48536) - "WebSocket /api/v1/message/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6eyJ1IjoiZnJlcXRyYWRlciJ9LCJleHAiOjE3MDU0OTc1OTksImlhdCI6MTcwNTQ5NjY5OSwidHlwZSI6ImFjY2VzcyJ9.GxP0_8ttvc93m_NVIjnYtbzyXupojh8HkBYPui06BaU" [accepted]
+2024-01-17 13:15:01,655 - freqtrade.rpc.api_server.ws.channel - INFO - Connected to channel - WebSocketChannel(8e02c3fa, ('172.19.0.1', 48536))
+2024-01-17 13:15:01,655 - uvicorn.error - INFO - connection open
+2024-01-17 13:15:01,916 - uvicorn.error - INFO - ('172.19.0.1', 48548) - "WebSocket /api/v1/message/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6eyJ1IjoiZnJlcXRyYWRlciJ9LCJleHAiOjE3MDU0OTc1OTksImlhdCI6MTcwNTQ5NjY5OSwidHlwZSI6ImFjY2VzcyJ9.GxP0_8ttvc93m_NVIjnYtbzyXupojh8HkBYPui06BaU" [accepted]
+2024-01-17 13:15:01,916 - freqtrade.rpc.api_server.ws.channel - INFO - Connected to channel - WebSocketChannel(35aab8f9, ('172.19.0.1', 48548))
+2024-01-17 13:15:01,917 - uvicorn.error - INFO - connection open
+2024-01-17 13:15:02,170 - uvicorn.error - INFO - ('172.19.0.1', 48554) - "WebSocket /api/v1/message/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6eyJ1IjoiZnJlcXRyYWRlciJ9LCJleHAiOjE3MDU0OTc1OTksImlhdCI6MTcwNTQ5NjY5OSwidHlwZSI6ImFjY2VzcyJ9.GxP0_8ttvc93m_NVIjnYtbzyXupojh8HkBYPui06BaU" [accepted]
+2024-01-17 13:15:02,170 - freqtrade.rpc.api_server.ws.channel - INFO - Connected to channel - WebSocketChannel(e71662f2, ('172.19.0.1', 48554))
+2024-01-17 13:15:02,171 - uvicorn.error - INFO - connection open
+2024-01-17 13:15:58,830 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 13:16:27,972 - freqtrade.commands.trade_commands - INFO - SIGINT received, aborting ...
+2024-01-17 13:16:27,972 - freqtrade.commands.trade_commands - INFO - worker found ... calling exit
+2024-01-17 13:16:27,973 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'process died'}
+2024-01-17 13:16:27,973 - freqtrade.freqtradebot - INFO - Cleaning up modules ...
+2024-01-17 13:16:27,974 - freqtrade.freqai.freqai_interface - INFO - Stopping FreqAI
+2024-01-17 13:16:27,974 - freqtrade.freqai.freqai_interface - INFO - Waiting on Training iteration
+2024-01-17 13:16:27,974 - freqtrade.rpc.rpc_manager - INFO - Cleaning up rpc modules ...
+2024-01-17 13:16:27,974 - freqtrade.rpc.rpc_manager - INFO - Cleaning up rpc.apiserver ...
+2024-01-17 13:16:27,974 - freqtrade.rpc.api_server.webserver - INFO - Stopping API Server
+2024-01-17 13:16:27,987 - uvicorn.error - INFO - Shutting down
+2024-01-17 13:16:27,988 - uvicorn.error - INFO - connection closed
+2024-01-17 13:16:27,988 - uvicorn.error - INFO - connection closed
+2024-01-17 13:16:27,988 - uvicorn.error - INFO - connection closed
+2024-01-17 13:16:27,989 - freqtrade.rpc.api_server.ws.channel - INFO - Disconnected from channel - WebSocketChannel(e71662f2, ('172.19.0.1', 48554))
+2024-01-17 13:16:27,989 - freqtrade.rpc.api_server.ws.channel - INFO - Disconnected from channel - WebSocketChannel(35aab8f9, ('172.19.0.1', 48548))
+2024-01-17 13:16:27,989 - freqtrade.rpc.api_server.ws.channel - INFO - Disconnected from channel - WebSocketChannel(8e02c3fa, ('172.19.0.1', 48536))
+2024-01-17 13:16:28,088 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-01-17 13:16:28,088 - uvicorn.error - INFO - Application shutdown complete.
+2024-01-17 13:16:28,088 - uvicorn.error - INFO - Finished server process [1]
+2024-01-17 22:31:24,794 - freqtrade.loggers - INFO - Verbosity set to 0
+2024-01-17 22:31:24,794 - freqtrade.configuration.configuration - INFO - Runmode set to dry_run.
+2024-01-17 22:31:24,795 - freqtrade.configuration.configuration - INFO - Parameter --db-url detected ...
+2024-01-17 22:31:24,795 - freqtrade.configuration.configuration - INFO - Dry run is enabled
+2024-01-17 22:31:24,795 - freqtrade.configuration.configuration - INFO - Using DB: "sqlite:////freqtrade/user_data/tradesv3.sqlite"
+2024-01-17 22:31:24,795 - freqtrade.configuration.configuration - INFO - Using max_open_trades: 10 ...
+2024-01-17 22:31:24,809 - freqtrade.configuration.configuration - INFO - Using user-data directory: /freqtrade/user_data ...
+2024-01-17 22:31:24,809 - freqtrade.configuration.configuration - INFO - Using data directory: /freqtrade/user_data/data/kraken ...
+2024-01-17 22:31:24,809 - freqtrade.configuration.configuration - INFO - Using freqaimodel class name: XGBoostRegressor
+2024-01-17 22:31:24,810 - freqtrade.exchange.check_exchange - INFO - Checking exchange...
+2024-01-17 22:31:24,813 - freqtrade.exchange.check_exchange - INFO - Exchange "kraken" is officially supported by the Freqtrade development team.
+2024-01-17 22:31:24,813 - freqtrade.configuration.configuration - INFO - Using pairlist from configuration.
+2024-01-17 22:31:24,939 - freqtrade.resolvers.iresolver - INFO - Using resolved strategy freqai_strat from '/freqtrade/user_data/strategies/freqai_strat.py'...
+2024-01-17 22:31:24,940 - freqtrade.strategy.hyper - INFO - Found no parameter file.
+2024-01-17 22:31:24,940 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_currency' with value in config file: USDT.
+2024-01-17 22:31:24,940 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_amount' with value in config file: unlimited.
+2024-01-17 22:31:24,940 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'unfilledtimeout' with value in config file: {'entry': 10, 'exit': 10, 'exit_timeout_count': 0, 'unit': 'minutes'}.
+2024-01-17 22:31:24,940 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'max_open_trades' with value in config file: 10.
+2024-01-17 22:31:24,941 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using minimal_roi: {'60': 0.01, '30': 0.02, '0': 0.04}
+2024-01-17 22:31:24,941 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using timeframe: 5m
+2024-01-17 22:31:24,941 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stoploss: -0.1
+2024-01-17 22:31:24,941 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop: False
+2024-01-17 22:31:24,941 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop_positive_offset: 0.0
+2024-01-17 22:31:24,941 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_only_offset_is_reached: False
+2024-01-17 22:31:24,941 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_custom_stoploss: True
+2024-01-17 22:31:24,941 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using process_only_new_candles: True
+2024-01-17 22:31:24,941 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_types: {'entry': 'limit', 'exit': 'limit', 'stoploss': 'market', 'stoploss_on_exchange': False}
+2024-01-17 22:31:24,942 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_time_in_force: {'entry': 'GTC', 'exit': 'GTC'}
+2024-01-17 22:31:24,942 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_currency: USDT
+2024-01-17 22:31:24,942 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_amount: unlimited
+2024-01-17 22:31:24,942 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using protections: []
+2024-01-17 22:31:24,942 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using startup_candle_count: 20
+2024-01-17 22:31:24,942 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using unfilledtimeout: {'entry': 10, 'exit': 10, 'exit_timeout_count': 0, 'unit': 'minutes'}
+2024-01-17 22:31:24,942 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_exit_signal: True
+2024-01-17 22:31:24,942 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_only: False
+2024-01-17 22:31:24,942 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_roi_if_entry_signal: False
+2024-01-17 22:31:24,943 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_offset: 0.0
+2024-01-17 22:31:24,943 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using disable_dataframe_checks: False
+2024-01-17 22:31:24,943 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_buying_expired_candle_after: 0
+2024-01-17 22:31:24,943 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using position_adjustment_enable: False
+2024-01-17 22:31:24,943 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_entry_position_adjustment: -1
+2024-01-17 22:31:24,943 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_open_trades: 10
+2024-01-17 22:31:24,943 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
+2024-01-17 22:31:24,946 - freqtrade.exchange.exchange - INFO - Instance is running with dry_run enabled
+2024-01-17 22:31:24,946 - freqtrade.exchange.exchange - INFO - Using CCXT 4.2.2
+2024-01-17 22:31:24,946 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'enableRateLimit': True}
+2024-01-17 22:31:24,949 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'enableRateLimit': True, 'rateLimit': 3100}
+2024-01-17 22:31:24,951 - freqtrade.exchange.exchange - INFO - Using Exchange "Kraken"
+2024-01-17 22:31:29,990 - freqtrade.resolvers.exchange_resolver - INFO - Using resolved exchange 'Kraken'...
+2024-01-17 22:31:30,025 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:31:30,028 - freqtrade.resolvers.iresolver - INFO - Using resolved pairlist StaticPairList from '/freqtrade/freqtrade/plugins/pairlist/StaticPairList.py'...
+2024-01-17 22:31:30,282 - freqtrade.rpc.rpc_manager - INFO - Enabling rpc.api_server
+2024-01-17 22:31:30,535 - freqtrade.rpc.api_server.webserver - INFO - Starting HTTP Server at 0.0.0.0:8080
+2024-01-17 22:31:30,536 - freqtrade.rpc.api_server.webserver - INFO - Starting Local Rest Server.
+2024-01-17 22:31:30,552 - uvicorn.error - INFO - Started server process [1]
+2024-01-17 22:31:30,552 - uvicorn.error - INFO - Waiting for application startup.
+2024-01-17 22:31:30,552 - uvicorn.error - INFO - Application startup complete.
+2024-01-17 22:31:30,552 - uvicorn.error - INFO - Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+2024-01-17 22:31:30,556 - freqtrade.resolvers.iresolver - INFO - Using resolved pairlist StaticPairList from '/freqtrade/freqtrade/plugins/pairlist/StaticPairList.py'...
+2024-01-17 22:31:30,559 - freqtrade.plugins.pairlistmanager - INFO - Whitelist with 2 pairs: ['BTC/USDT', 'ETH/USDT']
+2024-01-17 22:31:33,021 - freqtrade.resolvers.iresolver - INFO - Using resolved freqaimodel XGBoostRegressor from '/freqtrade/freqtrade/freqai/prediction_models/XGBoostRegressor.py'...
+2024-01-17 22:31:33,022 - freqtrade.freqai.freqai_interface - INFO - Backtesting module configured to save all models.
+2024-01-17 22:31:33,022 - freqtrade.freqai.data_drawer - INFO - Could not find existing datadrawer, starting from scratch
+2024-01-17 22:31:33,022 - freqtrade.freqai.data_drawer - INFO - Could not find existing historic_predictions, starting from scratch
+2024-01-17 22:31:33,022 - freqtrade.freqai.freqai_interface - INFO - Set fresh train queue from whitelist. Queue: ['BTC/USDT', 'ETH/USDT']
+2024-01-17 22:31:33,023 - freqtrade.strategy.interface - INFO - Downloading all training data for all pairs in whitelist and corr_pairlist, this may take a while if the data is not already on disk.
+2024-01-17 22:31:33,024 - freqtrade.freqai.utils - INFO - FreqAI auto-downloader using 30 startup candles.
+2024-01-17 22:31:33,070 - freqtrade.data.history.history_utils - INFO - (1/2) - Download history data for "BTC/USDT", 5m, spot and store in /freqtrade/user_data/data/kraken. From 2023-12-13T22:31:33 to 2024-01-17T22:31:33
+2024-01-17 22:32:04,694 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 1
+2024-01-17 22:32:05,696 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 4 times.
+2024-01-17 22:32:10,522 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 1
+2024-01-17 22:32:11,523 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 4 times.
+2024-01-17 22:32:16,674 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 1
+2024-01-17 22:32:17,675 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 4 times.
+2024-01-17 22:32:22,882 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 2
+2024-01-17 22:32:24,883 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 3 times.
+2024-01-17 22:32:29,074 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 5
+2024-01-17 22:32:34,076 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 2 times.
+2024-01-17 22:32:37,398 - freqtrade.exchange.exchange - INFO - Downloaded data for BTC/USDT with length 10080.
+2024-01-17 22:32:37,435 - freqtrade.data.history.history_utils - INFO - (1/2) - Download history data for "BTC/USDT", 15m, spot and store in /freqtrade/user_data/data/kraken. From 2023-12-13T22:31:33 to 2024-01-17T22:31:33
+2024-01-17 22:32:53,590 - freqtrade.exchange.exchange - INFO - Downloaded data for BTC/USDT with length 3360.
+2024-01-17 22:32:53,611 - freqtrade.data.history.history_utils - INFO - (1/2) - Download history data for "BTC/USDT", 4h, spot and store in /freqtrade/user_data/data/kraken. From 2024-01-17T04:00:00 to 2024-01-17T22:31:33
+2024-01-17 22:32:56,919 - freqtrade.exchange.exchange - INFO - Downloaded data for BTC/USDT with length 5.
+2024-01-17 22:32:56,934 - freqtrade.data.history.history_utils - INFO - (2/2) - Download history data for "ETH/USDT", 5m, spot and store in /freqtrade/user_data/data/kraken. From 2023-12-13T22:31:33 to 2024-01-17T22:31:33
+2024-01-17 22:33:28,583 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 1
+2024-01-17 22:33:29,584 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 4 times.
+2024-01-17 22:33:34,357 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 1
+2024-01-17 22:33:35,359 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 4 times.
+2024-01-17 22:33:40,546 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 1
+2024-01-17 22:33:41,547 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 4 times.
+2024-01-17 22:33:46,775 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 2
+2024-01-17 22:33:48,776 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 3 times.
+2024-01-17 22:33:52,979 - freqtrade.exchange.common - INFO - Applying DDosProtection backoff delay: 5
+2024-01-17 22:33:57,981 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "kraken {"error":["EGeneral:Too many requests"]}". Retrying still for 2 times.
+2024-01-17 22:34:01,356 - freqtrade.exchange.exchange - INFO - Downloaded data for ETH/USDT with length 10080.
+2024-01-17 22:34:01,377 - freqtrade.data.history.history_utils - INFO - (2/2) - Download history data for "ETH/USDT", 15m, spot and store in /freqtrade/user_data/data/kraken. From 2023-12-13T22:31:33 to 2024-01-17T22:31:33
+2024-01-17 22:34:17,098 - freqtrade.exchange.exchange - INFO - Downloaded data for ETH/USDT with length 3360.
+2024-01-17 22:34:17,118 - freqtrade.data.history.history_utils - INFO - (2/2) - Download history data for "ETH/USDT", 4h, spot and store in /freqtrade/user_data/data/kraken. From 2024-01-17T04:00:00 to 2024-01-17T22:31:33
+2024-01-17 22:34:20,437 - freqtrade.exchange.exchange - INFO - Downloaded data for ETH/USDT with length 5.
+2024-01-17 22:34:20,445 - freqtrade.strategy.hyper - INFO - No params for buy found, using default values.
+2024-01-17 22:34:20,446 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): buy_rsi = 30
+2024-01-17 22:34:20,446 - freqtrade.strategy.hyper - INFO - No params for sell found, using default values.
+2024-01-17 22:34:20,446 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): sell_rsi = 70
+2024-01-17 22:34:20,446 - freqtrade.strategy.hyper - INFO - No params for protection found, using default values.
+2024-01-17 22:34:20,446 - freqtrade.plugins.protectionmanager - INFO - No protection Handlers defined.
+2024-01-17 22:34:20,447 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'running'}
+2024-01-17 22:34:20,447 - freqtrade.worker - INFO - Changing state to: RUNNING
+2024-01-17 22:34:20,456 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': warning, 'status': 'Dry run is enabled. All trades are simulated.'}
+2024-01-17 22:34:20,456 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "*Exchange:* `kraken`\n*Stake per trade:* `unlimited USDT`\n*Minimum ROI:* `{'60': 0.01, '30': 0.02, '0': 0.04}`\n*Stoploss:* `-0.1`\n*Position adjustment:* `Off`\n*Timeframe:* `5m`\n*Strategy:* `freqai_strat`"}
+2024-01-17 22:34:20,457 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "Searching for USDT pairs to buy and sell based on [{'StaticPairList': 'StaticPairList'}]"}
+2024-01-17 22:34:39,406 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:35:07,463 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:35:07,765 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.44614), adjusting to 26.44614.
+2024-01-17 22:35:07,765 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.44614), ignoring trade.
+2024-01-17 22:35:07,776 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:35:08,593 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.44614), adjusting to 26.44614.
+2024-01-17 22:35:08,594 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.44614), ignoring trade.
+2024-01-17 22:35:12,777 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:35:13,097 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.447610000000005), adjusting to 26.447610000000005.
+2024-01-17 22:35:13,097 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.447610000000005), ignoring trade.
+2024-01-17 22:35:17,777 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:35:18,085 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.45202), adjusting to 26.45202.
+2024-01-17 22:35:18,085 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.45202), ignoring trade.
+2024-01-17 22:35:22,777 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:35:22,976 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.451495), adjusting to 26.451495.
+2024-01-17 22:35:22,976 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.451495), ignoring trade.
+2024-01-17 22:35:27,777 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:35:27,981 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.449395), adjusting to 26.449395.
+2024-01-17 22:35:27,981 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.449395), ignoring trade.
+2024-01-17 22:35:32,777 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:35:33,403 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.451285000000002), adjusting to 26.451285000000002.
+2024-01-17 22:35:33,403 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.451285000000002), ignoring trade.
+2024-01-17 22:35:37,777 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:35:38,052 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.452125), adjusting to 26.452125.
+2024-01-17 22:35:38,053 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.452125), ignoring trade.
+2024-01-17 22:35:42,766 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:35:42,779 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:35:43,035 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.45076), adjusting to 26.45076.
+2024-01-17 22:35:43,035 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.45076), ignoring trade.
+2024-01-17 22:35:47,777 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:35:47,984 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.44929), adjusting to 26.44929.
+2024-01-17 22:35:47,985 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.44929), ignoring trade.
+2024-01-17 22:35:52,779 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:35:52,977 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.447085), adjusting to 26.447085.
+2024-01-17 22:35:52,977 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.447085), ignoring trade.
+2024-01-17 22:35:57,778 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:35:58,090 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.447820000000004), adjusting to 26.447820000000004.
+2024-01-17 22:35:58,090 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.447820000000004), ignoring trade.
+2024-01-17 22:36:02,779 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:36:02,971 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.447820000000004), adjusting to 26.447820000000004.
+2024-01-17 22:36:02,971 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.447820000000004), ignoring trade.
+2024-01-17 22:36:07,778 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:36:07,989 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.44635), adjusting to 26.44635.
+2024-01-17 22:36:07,989 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.44635), ignoring trade.
+2024-01-17 22:36:12,779 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:36:12,980 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.446035000000002), adjusting to 26.446035000000002.
+2024-01-17 22:36:12,980 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.446035000000002), ignoring trade.
+2024-01-17 22:36:17,779 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:36:17,982 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.443830000000002), adjusting to 26.443830000000002.
+2024-01-17 22:36:17,982 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.443830000000002), ignoring trade.
+2024-01-17 22:36:22,780 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:36:23,074 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.443095), adjusting to 26.443095.
+2024-01-17 22:36:23,075 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.443095), ignoring trade.
+2024-01-17 22:36:27,780 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:36:28,028 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442885), adjusting to 26.442885.
+2024-01-17 22:36:28,028 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442885), ignoring trade.
+2024-01-17 22:36:32,779 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:36:33,053 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442885), adjusting to 26.442885.
+2024-01-17 22:36:33,053 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442885), ignoring trade.
+2024-01-17 22:36:37,780 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:36:37,973 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.440785000000005), adjusting to 26.440785000000005.
+2024-01-17 22:36:37,973 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.440785000000005), ignoring trade.
+2024-01-17 22:36:42,768 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:36:42,779 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:36:43,098 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.445510000000002), adjusting to 26.445510000000002.
+2024-01-17 22:36:43,098 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.445510000000002), ignoring trade.
+2024-01-17 22:36:47,780 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:36:48,066 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.445510000000002), adjusting to 26.445510000000002.
+2024-01-17 22:36:48,066 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.445510000000002), ignoring trade.
+2024-01-17 22:36:52,780 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:36:53,062 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.445510000000002), adjusting to 26.445510000000002.
+2024-01-17 22:36:53,062 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.445510000000002), ignoring trade.
+2024-01-17 22:36:57,782 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:36:58,095 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.444145), adjusting to 26.444145.
+2024-01-17 22:36:58,095 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.444145), ignoring trade.
+2024-01-17 22:37:02,781 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:37:03,008 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.443095), adjusting to 26.443095.
+2024-01-17 22:37:03,008 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.443095), ignoring trade.
+2024-01-17 22:37:07,782 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:37:07,981 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442570000000003), adjusting to 26.442570000000003.
+2024-01-17 22:37:07,981 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442570000000003), ignoring trade.
+2024-01-17 22:37:12,780 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:37:12,969 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442255), adjusting to 26.442255.
+2024-01-17 22:37:12,969 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442255), ignoring trade.
+2024-01-17 22:37:17,781 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:37:18,096 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442150000000005), adjusting to 26.442150000000005.
+2024-01-17 22:37:18,096 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442150000000005), ignoring trade.
+2024-01-17 22:37:22,781 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:37:22,972 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442570000000003), adjusting to 26.442570000000003.
+2024-01-17 22:37:22,972 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442570000000003), ignoring trade.
+2024-01-17 22:37:27,782 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:37:28,080 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442570000000003), adjusting to 26.442570000000003.
+2024-01-17 22:37:28,080 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442570000000003), ignoring trade.
+2024-01-17 22:37:32,781 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:37:33,169 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.44299), adjusting to 26.44299.
+2024-01-17 22:37:33,169 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.44299), ignoring trade.
+2024-01-17 22:37:37,782 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:37:38,009 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442780000000003), adjusting to 26.442780000000003.
+2024-01-17 22:37:38,010 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442780000000003), ignoring trade.
+2024-01-17 22:37:42,770 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:37:42,781 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:37:42,976 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.443620000000003), adjusting to 26.443620000000003.
+2024-01-17 22:37:42,976 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.443620000000003), ignoring trade.
+2024-01-17 22:37:47,782 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:37:48,047 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.44299), adjusting to 26.44299.
+2024-01-17 22:37:48,047 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.44299), ignoring trade.
+2024-01-17 22:37:52,782 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:37:52,978 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.440785000000005), adjusting to 26.440785000000005.
+2024-01-17 22:37:52,979 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.440785000000005), ignoring trade.
+2024-01-17 22:37:57,783 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:37:58,013 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442780000000003), adjusting to 26.442780000000003.
+2024-01-17 22:37:58,013 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442780000000003), ignoring trade.
+2024-01-17 22:38:02,782 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:38:02,971 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442675), adjusting to 26.442675.
+2024-01-17 22:38:02,971 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442675), ignoring trade.
+2024-01-17 22:38:07,784 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:38:07,983 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442465), adjusting to 26.442465.
+2024-01-17 22:38:07,983 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442465), ignoring trade.
+2024-01-17 22:38:12,784 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:38:13,008 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442465), adjusting to 26.442465.
+2024-01-17 22:38:13,008 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442465), ignoring trade.
+2024-01-17 22:38:17,783 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:38:17,990 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442885), adjusting to 26.442885.
+2024-01-17 22:38:17,990 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442885), ignoring trade.
+2024-01-17 22:38:22,783 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:38:23,062 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.441940000000006), adjusting to 26.441940000000006.
+2024-01-17 22:38:23,062 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.441940000000006), ignoring trade.
+2024-01-17 22:38:27,785 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:38:28,114 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442675), adjusting to 26.442675.
+2024-01-17 22:38:28,115 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442675), ignoring trade.
+2024-01-17 22:38:32,784 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:38:33,068 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442885), adjusting to 26.442885.
+2024-01-17 22:38:33,068 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442885), ignoring trade.
+2024-01-17 22:38:37,785 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:38:37,972 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442885), adjusting to 26.442885.
+2024-01-17 22:38:37,972 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442885), ignoring trade.
+2024-01-17 22:38:42,773 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:38:42,784 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:38:43,022 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.442885), adjusting to 26.442885.
+2024-01-17 22:38:43,022 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.442885), ignoring trade.
+2024-01-17 22:38:47,785 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:38:48,066 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.433120000000002), adjusting to 26.433120000000002.
+2024-01-17 22:38:48,066 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.433120000000002), ignoring trade.
+2024-01-17 22:38:52,784 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:38:52,976 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.43081), adjusting to 26.43081.
+2024-01-17 22:38:52,976 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.43081), ignoring trade.
+2024-01-17 22:38:57,784 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:38:58,017 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.429865000000003), adjusting to 26.429865000000003.
+2024-01-17 22:38:58,017 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.429865000000003), ignoring trade.
+2024-01-17 22:39:02,784 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:39:03,076 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.424300000000002), adjusting to 26.424300000000002.
+2024-01-17 22:39:03,076 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.424300000000002), ignoring trade.
+2024-01-17 22:39:07,786 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:39:07,993 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.414325), adjusting to 26.414325.
+2024-01-17 22:39:07,993 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.414325), ignoring trade.
+2024-01-17 22:39:12,784 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:39:12,974 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.410545), adjusting to 26.410545.
+2024-01-17 22:39:12,974 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.410545), ignoring trade.
+2024-01-17 22:39:17,784 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:39:18,017 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.408025000000002), adjusting to 26.408025000000002.
+2024-01-17 22:39:18,018 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.408025000000002), ignoring trade.
+2024-01-17 22:39:22,785 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:39:22,983 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.406765), adjusting to 26.406765.
+2024-01-17 22:39:22,983 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.406765), ignoring trade.
+2024-01-17 22:39:27,787 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:39:27,986 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.40414), adjusting to 26.40414.
+2024-01-17 22:39:27,986 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.40414), ignoring trade.
+2024-01-17 22:39:32,785 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:39:33,017 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.401410000000002), adjusting to 26.401410000000002.
+2024-01-17 22:39:33,017 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.401410000000002), ignoring trade.
+2024-01-17 22:39:37,785 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:39:37,995 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.39763), adjusting to 26.39763.
+2024-01-17 22:39:37,995 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.39763), ignoring trade.
+2024-01-17 22:39:42,774 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:39:42,785 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:39:42,998 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.395740000000004), adjusting to 26.395740000000004.
+2024-01-17 22:39:42,998 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.395740000000004), ignoring trade.
+2024-01-17 22:39:47,786 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:39:47,974 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.39826), adjusting to 26.39826.
+2024-01-17 22:39:47,974 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.39826), ignoring trade.
+2024-01-17 22:39:52,786 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:39:52,977 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.391750000000002), adjusting to 26.391750000000002.
+2024-01-17 22:39:52,977 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.391750000000002), ignoring trade.
+2024-01-17 22:39:57,786 - freqtrade.wallets - INFO - Wallets synced.
+2024-01-17 22:39:57,989 - freqtrade.wallets - INFO - Stake amount for pair ETH/USDT is too small (9.9 < 26.391330000000004), adjusting to 26.391330000000004.
+2024-01-17 22:39:57,989 - freqtrade.wallets - INFO - Adjusted stake amount for pair ETH/USDT is more than 30% bigger than the desired stake amount of (9.90000000 * 1.3 = 12.87000000) < 26.391330000000004), ignoring trade.
+2024-01-17 22:40:47,488 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:41:47,490 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:42:47,492 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:43:47,494 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:44:47,496 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:45:48,719 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:46:48,721 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:47:48,723 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:48:48,725 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:49:48,726 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:50:52,762 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:51:52,764 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:52:52,765 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:53:52,767 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:54:52,769 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:55:57,478 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:56:57,480 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:57:57,482 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:58:57,484 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 22:59:57,485 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:00:58,694 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:01:58,696 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:02:58,698 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:03:58,699 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:04:58,701 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:06:02,755 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:07:02,757 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:08:02,759 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:09:02,761 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:10:07,882 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:11:07,883 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:12:07,885 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:13:07,887 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:14:07,888 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:15:13,704 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:16:13,705 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:17:13,707 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:18:13,709 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:19:13,711 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:20:17,446 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:21:17,448 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:22:17,450 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:23:17,451 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:24:17,453 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:25:17,873 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:26:17,875 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:27:17,877 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:28:17,879 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:29:17,880 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:30:18,665 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:31:18,667 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:31:33,670 - freqtrade.exchange.exchange - ERROR - Could not reload markets.
+Traceback (most recent call last):
+  File "/home/ftuser/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/urllib3/connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/http/client.py", line 1378, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.11/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ftuser/.local/lib/python3.11/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/urllib3/util/retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ftuser/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/urllib3/connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/http/client.py", line 1378, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.11/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ftuser/.local/lib/python3.11/site-packages/ccxt/base/exchange.py", line 595, in fetch
+    response = self.session.request(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/freqtrade/freqtrade/exchange/exchange.py", line 502, in reload_markets
+    self._markets = self._api.load_markets(reload=True, params={})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/ccxt/base/exchange.py", line 1462, in load_markets
+    currencies = self.fetch_currencies()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/ccxt/kraken.py", line 647, in fetch_currencies
+    response = self.publicGetAssets(params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/ccxt/base/types.py", line 34, in unbound_method
+    return _self.request(self.path, self.api, self.method, params, config=self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/ccxt/base/exchange.py", line 3336, in request
+    return self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/ccxt/base/exchange.py", line 3333, in fetch2
+    return self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ftuser/.local/lib/python3.11/site-packages/ccxt/base/exchange.py", line 648, in fetch
+    raise NetworkError(details) from e
+ccxt.base.errors.NetworkError: kraken GET https://api.kraken.com/0/public/Assets
+2024-01-17 23:31:33,684 - freqtrade.plugins.pairlistmanager - INFO - Whitelist with 2 pairs: ['BTC/USDT', 'ETH/USDT']
+2024-01-17 23:32:21,847 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:33:21,849 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:34:21,851 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:35:22,476 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:36:22,478 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:37:22,480 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:38:22,481 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:39:22,483 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:40:27,446 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:41:27,448 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:42:27,449 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:43:27,451 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:44:27,453 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:45:28,682 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:46:28,684 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:47:28,685 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:48:28,687 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:49:28,689 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:50:32,470 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:51:32,471 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:52:32,473 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:53:32,474 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:54:32,476 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:55:32,519 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:56:32,521 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:57:32,523 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:58:32,525 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-17 23:59:32,526 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:00:34,924 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:01:34,926 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:02:34,928 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:03:34,929 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:04:34,931 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:05:37,448 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:06:37,449 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:07:37,451 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:08:37,453 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:09:37,455 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:10:37,512 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:11:37,514 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:12:37,515 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:13:37,517 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:14:37,519 - freqtrade.worker - INFO - Bot heartbeat. PID=1, version='docker-2024.1-dev-b6a71f2d', state='RUNNING'
+2024-01-18 00:15:25,125 - freqtrade.commands.trade_commands - INFO - SIGINT received, aborting ...
+2024-01-18 00:15:25,125 - freqtrade.commands.trade_commands - INFO - worker found ... calling exit
+2024-01-18 00:15:25,125 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'process died'}
+2024-01-18 00:15:25,125 - freqtrade.freqtradebot - INFO - Cleaning up modules ...
+2024-01-18 00:15:25,126 - freqtrade.freqai.freqai_interface - INFO - Stopping FreqAI
+2024-01-18 00:15:25,126 - freqtrade.freqai.freqai_interface - INFO - Waiting on Training iteration
+2024-01-18 00:15:25,126 - freqtrade.rpc.rpc_manager - INFO - Cleaning up rpc modules ...
+2024-01-18 00:15:25,126 - freqtrade.rpc.rpc_manager - INFO - Cleaning up rpc.apiserver ...
+2024-01-18 00:15:25,127 - freqtrade.rpc.api_server.webserver - INFO - Stopping API Server
+2024-01-18 00:15:25,194 - uvicorn.error - INFO - Shutting down
+2024-01-18 00:15:25,294 - uvicorn.error - INFO - Waiting for application shutdown.
+2024-01-18 00:15:25,295 - uvicorn.error - INFO - Application shutdown complete.
+2024-01-18 00:15:25,295 - uvicorn.error - INFO - Finished server process [1]
